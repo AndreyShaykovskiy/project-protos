@@ -1,0 +1,31 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+package user;
+option go_package = "github.com/AndreyShaykovskiy/project-protos/proto/user";
+
+// Сущность пользователь (минимум полей)
+message User {
+  uint32 id    = 1;
+  string email = 2;
+}
+
+// Запрос на создание
+message CreateUserRequest {
+  string email = 1;
+}
+message CreateUserResponse {
+  User user = 1;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+}
+
+service UserService {
+  rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+  rpc GetUser    (User)              returns (User);
+  // TODO: дописать UpdateUser, DeleteUser и ListUsers
+  rpc UpdateUser (User) returns (User);
+  rpc DeleteUser (User) returns (google.protobuf.Empty);
+  rpc ListUsers (google.protobuf.Empty) returns (ListUsersResponse);
+}
