@@ -2,6 +2,8 @@ module github.com/AndreyShaykovskiy/project-protos
 
 go 1.23.0
 
+toolchain go1.23.10
+
 require (
 	google.golang.org/grpc v1.73.0
 	google.golang.org/protobuf v1.36.6
