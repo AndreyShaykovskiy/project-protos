@@ -1,4 +1,4 @@
-module github.com/AndreyShaykovskiy/project-prot
+module github.com/AndreyShaykovskiy/project-protos
 
 go 1.23.0
 
