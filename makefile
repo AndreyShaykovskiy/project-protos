@@ -1,4 +1,4 @@
-PROTOS  := proto/*.proto
+PROTOS  := $(shell find proto -name "*.proto")
 OUT_DIR := .
 
 generate:
